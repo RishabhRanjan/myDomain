@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  cursor: url('crosshairs.png'),auto;
 }
 
 .App-logo {
@@ -26,6 +27,7 @@
 
 .App-link {
   color: #61dafb;
+  cursor: pointer;
 }
 
 @keyframes App-logo-spin {
