@@ -1,12 +1,12 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Home from "./pages/Home/Home";
-import { Route, Routes } from "react-router";
-import { BrowserRouter, Link } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router";
+import { Link } from "react-router-dom";
 
 function App() {
-  alert("app initialised");
-  const DefaultApp = () => {
+  console.log("app", useLocation());
+  const DefaultApp = (props) => {
     return (
       <div className="App">
         <header className="App-header">
@@ -22,14 +22,10 @@ function App() {
     );
   };
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" Component={DefaultApp}></Route>
-          <Route path="/home" Component={Home}></Route>
-        </Routes>
-      </BrowserRouter>
-    </>
+    <Routes>
+      <Route path="/" Component={DefaultApp} />
+      <Route path="/home" Component={Home} />
+    </Routes>
   );
 }
 
